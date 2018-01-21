@@ -1,0 +1,39 @@
+---
+title: "Text Modeling"
+author: "Brian Tran"
+date: "January 21, 2018"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Introduction
+
+The Text Modeling app is a web application that will predict the next word given the beginning of a phrase.
+
+## Algorithm
+
+The app uses Katz Backoff algorithm, discounting for n-grams not in it's n-gram list.
+
+The n-grams sizes used are {1, 2, 3, 4 5} with sparcity values of {20, 3, 2, 2, 2}.
+
+The app is trained on 80% sample of Twitter, Blogs and News files that are 200 megabytes each.
+The most time-consuming part of the process is to read these files, clean them, filter and tokenize them into n-gram sizes from 1 to 5.  The output of these steps is stored into RData files, one file per n-gram size.
+
+When the launch is loaded, it's first step is to load the the 5 n-gram size RData files into memory.  It then waits for the user to click on the Predict button before making it's first word prediction.
+
+## App Tutorial
+
+The app is initially loaded with an example phrase.  Click the <b>Predict Next Word</b> button with the default phrase to see it's output.  The output will predict the top word along with list of the 5 best n-gram matches.
+
+## App and Source code
+
+<a href='https://bzhtapp.shinyapps.io/AssignWk6/' target='_blank'>Click here to launch the app</a>
+
+<br>
+<a href='https://github.com/bzhtapp/C10_Assign6' target='_blank'>All source code for app is located here</a>
+
+
+
