@@ -22,7 +22,8 @@ shinyUI(fluidPage(
     actionButton(inputId="btn_predict", label = "Predict next word"),
     headerPanel("Predicted next word is: "),
      textOutput("txt_prediction"),
-      textOutput("txt_matches")
+    headerPanel("Top n-gram matches are: "),
+      tableOutput("tbl_matches")
   )
 )
 )
