@@ -1,0 +1,13 @@
+name: AssignWk6
+title: AssignWk6
+username:
+account: bzhtapp
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 258939
+bundleId: 1185619
+url: https://bzhtapp.shinyapps.io/AssignWk6/
+when: 1516549494.07312
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: df_topfeatures_1gram.RData|df_topfeatures_2gram.RData|df_topfeatures_3gram.RData|df_topfeatures_4gram.RData|df_topfeatures_5gram.RData

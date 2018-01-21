@@ -57,19 +57,21 @@ shinyServer(function(input, output) {
     {
       prediction <- str_split(rownames(x)[1], "_", simplify="TRUE")
       output$txt_prediction <- renderText(prediction[length(prediction)])
+      n <- max
+      
+      if (dim(x)[1] < n)
+      {
+        n <- dim(x)[1]
+      }
+      
+      output$tbl_matches <- renderTable(rownames(x[1:n,,drop=FALSE]))
+      
     }
     else{
       output$txt_prediction <- renderText("I don't know.  Try to rephrase")
+      output$tbl_matches <- renderTable(c("No matches"))
     }
     
-    n <- max
-    
-    if (dim(x)[1] < n)
-    {
-      n <- dim(x)[1]
-    }
-    
-    output$tbl_matches <- renderTable(rownames(x[1:n,,drop=FALSE]))
   })
   
 

@@ -7,7 +7,7 @@ library(quanteda)
 getTokens <- function (x)
 {
   # Clean phrase x
-  sngl_quot_rx = "[`в]"
+  sngl_quot_rx = "[`]"
   dbl_quot_rx = "[\"]"
   # consolidate different apostroph variants.
   x <- gsub(dbl_quot_rx, "\"", x)
@@ -31,8 +31,7 @@ getTokens <- function (x)
     c(letters) %>% 
     c("to", "in", "on", "with", "at", "not", "from", "so", "all", "for", "by", "just", "said", "about", "said", "one", "get") %>%
     c( "rt", "lol", "im", "st", "u.s", "p.m", "a.m", "mr", "dr", 
-       "ll", "ur", "omg", "co", "oh", "ha", "haha", "ha", "la") %>%
-    c("о", "р", "oi", "ря", "гf", "г")
+       "ll", "ur", "omg", "co", "oh", "ha", "haha", "ha", "la")
   
   #Making general corpus
   scorpus <- corpus(x)
